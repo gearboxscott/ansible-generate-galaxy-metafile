@@ -1,0 +1,8 @@
+---
+# permenant variables for role_generate_metafile
+
+keys:
+  name: names
+  version: versions
+
+...

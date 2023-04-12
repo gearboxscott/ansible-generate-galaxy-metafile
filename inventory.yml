@@ -1,0 +1,18 @@
+---
+
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+  vars:
+    author: Nickoli Tesla
+    description: "This role will do something, don't know what but it will do something"
+    company: Static Electricity Company
+    destination: ./meta.yml
+    platforms_search:
+      - EL
+      - fedora
+      - opensuse
+      - SLES
+
+...

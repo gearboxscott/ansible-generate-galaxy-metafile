@@ -1,0 +1,40 @@
+---
+- name: Display a list of platform for Galaxy Meta File
+  hosts: localhost
+  gather_facts: true
+
+  tasks:
+
+    - name: "Grab a list of Support Platforms to get versions"
+      ansible.builtin.uri:
+        url: https://galaxy.ansible.com/api/v1/platforms?page_size=1000
+      register: api_out
+
+    - name: "Create platforms variable for use in meta file"
+      ansible.builtin.set_fact:
+        interim: "{{ interim | default([]) + [{'name': item.name, 'version': item.release}] }}"
+      with_items:
+        - "{{ api_out | ansible.builtin.json_query('json.results[*].{name: name, release: release}') }}"
+
+    - name: "Create grouped platforms variable based on platforms_search"
+      ansible.builtin.set_fact:
+        platforms: |
+          platforms:
+          {% for platform in interim|groupby('name') %}
+            - name: {{ platform.0 }}
+              versions:
+          {%   for version in platform.1|json_query('[].keys(@)|[]')|unique %}
+          {%     if version != 'name' %}
+          {%       for os_version in platform.1|map(attribute=version)|unique %}
+              - {{ os_version }}
+          {%       endfor %}
+          {%     endif %}
+          {%   endfor %}
+          {% endfor %}
+
+    - name: "Create galaxy meta file as main.yml for meta/main.yml in role"
+      ansible.builtin.debug:
+        var: platforms
+
+...
+

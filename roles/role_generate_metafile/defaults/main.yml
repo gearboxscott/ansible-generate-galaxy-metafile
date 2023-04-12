@@ -1,0 +1,114 @@
+---
+# default variable for role_generate_metafile
+platform_query_site: https://galaxy.ansible.com/api/v1/platforms?page_size=1000
+
+# change values in galaxy_info to match your development information
+#
+# Role author information
+# author: 'your name'
+author: ''
+
+# Role description information
+# description: 'your role description'
+description: ''
+
+# Optional company information or changed to: company: ''
+# company: 'your company (optional)'
+company: ''
+
+# If this a Container Enabled role, provide the minimum Ansible Container version
+min_ansible_container_version: ''
+
+# example issue_tracker_url is http://example.com/issue/tracker
+issue_tracker_url: ''
+
+license: 'license (GPL-2.0-or-later, MIT, etc)'
+# look IDs for licenses here: ttps://spdx.org
+#  - 'BSD-3-Clause (default)'
+#  - 'MIT'
+#  - 'GPL-2.0-or-later'
+#  - 'GPL-3.0-only'
+#  - 'Apache-2.0'
+#  - 'CC-BY-4.0'
+
+min_ansible_version: 2.9
+
+galaxy_tags: []
+# galaxy tags are a list
+# example:
+#
+# galaxy_tags:
+#   - web
+#   - system
+#   - monitoring
+#   - logging
+#   - lucene
+#   - elk
+#   - elasticsearch
+
+dependencies: []
+# dependencies are a list
+# example:
+#
+# dependencies:
+#   - src: geerlingguy.ansible
+#   - src: git+https://github.com/geerlingguy/ansible-role-composer.git
+#     version: 775396299f2da1f519f0d8885022ca2d6ee80ee8
+#     name: composer
+
+# Create only these platforms in the meta file
+platforms_search: []
+
+# Example platforms_search
+# platforms_search:
+#   - EL
+#   - fedora
+#   - opensuse
+#   - SLES
+
+# Here is a list of current platforms to use for platforms_search
+#
+# available platform list
+#
+#  - AIX:
+#  - Alpine:
+#  - Amazon:
+#  - Amazon Linux 2:
+#  - aos:
+#  - ArchLinux:
+#  - ClearLinux:
+#  - Cumulus:
+#  - Debian:
+#  - DellOS:
+#  - Devuan:
+#  - DragonFlyBSD:
+#  - EL:
+#  - eos:
+#  - Fedora:
+#  - FreeBSD:
+#  - GenericBSD:
+#  - GenericLinux:
+#  - GenericUNIX:
+#  - Gentoo:
+#  - HardenedBSD:
+#  - IOS:
+#  - Junos:
+#  - macOS:
+#  - MacOSX:
+#  - NXOS:
+#  - OpenBSD:
+#  - opensuse:
+#  - os10:
+#  - PAN-OS:
+#  - SLES:
+#  - SmartOS:
+#  - Solaris:
+#  - Synology:
+#  - TMOS:
+#  - Ubuntu:
+#  - vCenter:
+#  - Void Linux:
+#  - vSphere:
+#  - Windows:
+
+...

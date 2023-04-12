@@ -1,0 +1,31 @@
+galaxy_info:
+  author: {{ author }}
+  description: {{ description }}
+  company: {{  company }}
+{% if issue_tracker_url|length %}
+  issue_tracker_url: {{ issue_tracker_url }}
+{% endif %}
+  license: {{ license }}
+  min_ansible_version: {{ min_ansible_version }}
+{% if issue_tracker_url|length %}
+  min_ansible_container_version: {{ min_ansible_container_version }}
+{% endif %}
+  {{ platforms }}
+{%- if galaxy_tags|length %}
+  galaxy_tags:
+{%     for tag in galaxy_tags %}
+    - {{ tag }}
+{%     endfor %}
+{% else %}
+  galaxy_tags: []
+{% endif %}
+
+{% if dependencies|length %}
+dependencies:
+{%    for dependency in dependencies %}
+    - {{ dependency }}
+{%    endfor %}
+{% else %}
+dependencies: []
+{% endif %}
+

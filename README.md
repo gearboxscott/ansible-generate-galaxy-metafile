@@ -96,7 +96,7 @@ The following is an example of how to use your role:
 License
 -------
 
-GPL
+GNU General Public License v3.0
 
 Author Information
 ------------------
